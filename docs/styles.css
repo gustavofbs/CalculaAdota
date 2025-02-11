@@ -63,6 +63,7 @@ select {
 }
 
 table {
+    table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
     margin: 1rem 0;
@@ -83,7 +84,7 @@ th {
     background-color: var(--primary-color);
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.55rem 1rem;
     border-radius: 5px;
     cursor: pointer;
     font-size: 0.9rem;
