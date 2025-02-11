@@ -3,23 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Gastos com Pets</title>
+    <title>Simulador de Gastos com Pets - Adoção Responsável</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="calculator-container">
-        <h1>Calculadora de Gastos com Pets</h1>
+        <div class="intro-section">
+            <h1>Simulador de Gastos com Pets</h1>
+            <p class="adoption-info">A adoção é um ato de amor e responsabilidade. Antes de adotar, é importante considerar os custos mensais e anuais para garantir uma vida saudável e feliz ao seu pet.</p>
+        </div>
+
         <div class="pet-selector">
             <button onclick="selectPetType('small')">Cão Pequeno Porte</button>
             <button onclick="selectPetType('large')">Cão Grande Porte</button>
             <button onclick="selectPetType('cat')">Gato</button>
         </div>
+
         <div class="results-container">
-            <h2>Custos Estimados (0-1 ano)</h2>
-            <div id="costsList"></div>
-            <div class="total-container">
-                <h3>Total: R$ <span id="totalCost">0</span></h3>
-                <p>Porcentagem do salário mínimo: <span id="salaryPercentage">0</span>%</p>
+            <div class="costs-section">
+                <h2>Custos Iniciais (Uma vez)</h2>
+                <div id="initialCostsList"></div>
+                
+                <h2>Custos Mensais</h2>
+                <div id="monthlyCostsList"></div>
+                
+                <h2>Custos Anuais</h2>
+                <div id="yearCostsList"></div>
+            </div>
+
+            <div class="summary-container">
+                <h3>Resumo Financeiro</h3>
+                <p>Custo inicial: R$ <span id="initialTotal">0</span></p>
+                <p>Custo mensal estimado: R$ <span id="monthlyTotal">0</span></p>
+                <p>Custo primeiro ano: R$ <span id="yearTotal">0</span></p>
+                <p>Porcentagem do salário mínimo (mensal): <span id="salaryPercentage">0</span>%</p>
+            </div>
+
+            <div class="adoption-tips">
+                <h3>Pontos importantes a considerar:</h3>
+                <ul id="adoptionChecklist">
+                    <li>Você tem tempo disponível para cuidar do pet?</li>
+                    <li>Sua renda comporta os gastos mensais?</li>
+                    <li>Sua moradia permite animais?</li>
+                    <li>Você tem disponibilidade para emergências?</li>
+                </ul>
             </div>
         </div>
     </div>
