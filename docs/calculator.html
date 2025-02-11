@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Gastos com Pets</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Calculadora de Gastos com Pets</h1>
+        <div class="pet-selector">
+            <button onclick="selectPetType('small')">Cão Pequeno Porte</button>
+            <button onclick="selectPetType('large')">Cão Grande Porte</button>
+            <button onclick="selectPetType('cat')">Gato</button>
+        </div>
+        <div class="results-container">
+            <h2>Custos Estimados (0-1 ano)</h2>
+            <div id="costsList"></div>
+            <div class="total-container">
+                <h3>Total: R$ <span id="totalCost">0</span></h3>
+                <p>Porcentagem do salário mínimo: <span id="salaryPercentage">0</span>%</p>
+            </div>
+        </div>
+    </div>
+    <script src="calculator.js"></script>
+</body>
+</html>
