@@ -1,6 +1,6 @@
 const defaultPetCosts = {
     'small-dog': {
-        'Ração (15kg)': { price: 125.5, quantity: 1 },
+        'Ração (15kg)': { price: 125, quantity: 1 },
         'Casinha': { price: 60, quantity: 1 },
         'Coleira': { price: 40, quantity: 1 },
         'Consulta': { price: 175, quantity: 1 },

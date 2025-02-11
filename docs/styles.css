@@ -158,6 +158,45 @@ input[type="number"] {
     gap: 0.5rem;
 }
 
+.contributors {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.contributors h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.contributors-info {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.students, .advisor {
+    flex: 1;
+    min-width: 250px;
+}
+
+.contributors h3 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.contributors ul {
+    list-style-type: none;
+}
+
+.contributors li, .contributors p {
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
 @media (max-width: 768px) {
     .container {
         margin: 1rem auto;
