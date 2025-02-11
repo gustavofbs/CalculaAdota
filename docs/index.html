@@ -3,53 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Gastos com Pets - Adoção Responsável</title>
+    <title>Calculadora de Adoção Pet</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="calculator-container">
-        <div class="intro-section">
-            <h1>Simulador de Gastos com Pets</h1>
-            <p class="adoption-info">A adoção é um ato de amor e responsabilidade. Antes de adotar, é importante considerar os custos mensais e anuais para garantir uma vida saudável e feliz ao seu pet.</p>
+    <div class="container">
+        <h1>Calculadora de Adoção Pet</h1>
+        <p class="subtitle">Simule os gastos do primeiro ano com seu novo amigo</p>
+        
+        <div class="calculator">
+            <div class="pet-type-selector">
+                <label for="petType">Selecione o tipo do pet:</label>
+                <select id="petType">
+                    <option value="small-dog">Cachorro - Pequeno Porte</option>
+                    <option value="large-dog">Cachorro - Grande Porte</option>
+                    <option value="cat">Gato</option>
+                </select>
+            </div>
+
+            <div class="results">
+                <h2>Custos Estimados (Primeiro Ano)</h2>
+                <div id="costBreakdown"></div>
+                <div class="total-cost">
+                    <h3>Custo Total: <span id="totalCost">R$ 0,00</span></h3>
+                    <p class="salary-reference">Referência: Salário Mínimo 2024 - R$ 1.518,00</p>
+                </div>
+            </div>
         </div>
 
-        <div class="pet-selector">
-            <button onclick="selectPetType('small')">Cão Pequeno Porte</button>
-            <button onclick="selectPetType('large')">Cão Grande Porte</button>
-            <button onclick="selectPetType('cat')">Gato</button>
-        </div>
-
-        <div class="results-container">
-            <div class="costs-section">
-                <h2>Custos Iniciais (Uma vez)</h2>
-                <div id="initialCostsList"></div>
-                
-                <h2>Custos Mensais</h2>
-                <div id="monthlyCostsList"></div>
-                
-                <h2>Custos Anuais</h2>
-                <div id="yearCostsList"></div>
-            </div>
-
-            <div class="summary-container">
-                <h3>Resumo Financeiro</h3>
-                <p>Custo inicial: R$ <span id="initialTotal">0</span></p>
-                <p>Custo mensal estimado: R$ <span id="monthlyTotal">0</span></p>
-                <p>Custo primeiro ano: R$ <span id="yearTotal">0</span></p>
-                <p>Porcentagem do salário mínimo (mensal): <span id="salaryPercentage">0</span>%</p>
-            </div>
-
-            <div class="adoption-tips">
-                <h3>Pontos importantes a considerar:</h3>
-                <ul id="adoptionChecklist">
-                    <li>Você tem tempo disponível para cuidar do pet?</li>
-                    <li>Sua renda comporta os gastos mensais?</li>
-                    <li>Sua moradia permite animais?</li>
-                    <li>Você tem disponibilidade para emergências?</li>
-                </ul>
-            </div>
+        <div class="adoption-info">
+            <h2>Adoção Responsável</h2>
+            <p>Ter um pet é uma responsabilidade que dura anos. Antes de adotar, considere:</p>
+            <ul>
+                <li>Tempo disponível para cuidados e atenção</li>
+                <li>Espaço adequado em casa</li>
+                <li>Orçamento mensal para alimentação e cuidados</li>
+                <li>Compromisso com vacinas e visitas ao veterinário</li>
+            </ul>
         </div>
     </div>
-    <script src="calculator.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

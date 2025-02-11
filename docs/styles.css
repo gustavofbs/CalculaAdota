@@ -1,88 +1,113 @@
-.calculator-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #45a049;
+    --background-color: #f9f9f9;
+    --text-color: #333;
 }
 
-.intro-section {
-    background-color: #f5f5f5;
-    padding: 20px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.calculator {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.pet-type-selector {
+    margin-bottom: 2rem;
+}
+
+select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    margin-bottom: 20px;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.results {
+    margin-top: 2rem;
+}
+
+.cost-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.total-cost {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--primary-color);
+    text-align: right;
+}
+
+.salary-reference {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
 }
 
 .adoption-info {
-    color: #666;
-    line-height: 1.6;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.pet-selector {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+.adoption-info h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
-.pet-selector button {
-    flex: 1;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.adoption-info ul {
+    list-style-position: inside;
+    margin-top: 1rem;
 }
 
-.pet-selector button:hover {
-    background-color: #45a049;
+.adoption-info li {
+    margin-bottom: 0.5rem;
 }
 
-.results-container {
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 5px;
-}
-
-.costs-section h2 {
-    color: #2c3e50;
-    margin-top: 20px;
-}
-
-.summary-container {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-}
-
-.adoption-tips {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #fff3e0;
-    border-radius: 5px;
-}
-
-.adoption-tips ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.adoption-tips li {
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
-}
-
-.adoption-tips li:before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #ff9800;
-}
-
-.total-container {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 2px solid #ddd;
+@media (max-width: 600px) {
+    .container {
+        margin: 1rem auto;
+    }
+    
+    .calculator {
+        padding: 1rem;
+    }
 }
