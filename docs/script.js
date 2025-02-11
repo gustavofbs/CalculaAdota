@@ -127,9 +127,71 @@ function addNewCost() {
     updateGrandTotal();
 }
 
+// Função para gerar e baixar o PDF
+function generatePDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // Configurações do documento
+    doc.setFont("helvetica");
+    doc.setFontSize(16);
+    
+    // Título
+    doc.text("Relatório de Custos - Adoção Pet", 105, 20, { align: "center" });
+    
+    // Tipo do Pet
+    const petType = document.getElementById('petType');
+    const petTypeText = petType.options[petType.selectedIndex].text;
+    doc.setFontSize(12);
+    doc.text(`Tipo do Pet: ${petTypeText}`, 20, 30);
+    
+    // Data do relatório
+    const currentDate = new Date().toLocaleDateString('pt-BR');
+    doc.text(`Data do relatório: ${currentDate}`, 20, 40);
+
+    // Tabela de custos
+    const tableData = [];
+    document.querySelectorAll('#costsTableBody tr').forEach(row => {
+        const item = row.querySelector('.item-name').value;
+        const price = parseFloat(row.querySelector('.item-price').value) || 0;
+        const quantity = parseInt(row.querySelector('.item-quantity').value) || 1;
+        const total = price * quantity;
+        
+        tableData.push([
+            item,
+            formatCurrency(price),
+            quantity.toString(),
+            formatCurrency(total)
+        ]);
+    });
+
+    // Adicionar tabela ao PDF
+    doc.autoTable({
+        startY: 50,
+        head: [['Item', 'Preço', 'Quantidade', 'Total']],
+        body: tableData,
+        theme: 'striped',
+        headStyles: { fillColor: [67, 97, 238] },
+        styles: { fontSize: 10 }
+    });
+
+    // Custo Total
+    const totalCost = document.getElementById('totalCost').textContent;
+    const finalY = doc.lastAutoTable.finalY || 50;
+    doc.text(`Custo Total: ${totalCost}`, 20, finalY + 10);
+    
+    // Referência salarial
+    doc.setFontSize(10);
+    doc.text("Referência: Salário Mínimo 2025 - R$ 1.518,00", 20, finalY + 20);
+
+    // Salvar o PDF
+    doc.save('relatorio-custos-pet.pdf');
+}
+
 // Event Listeners
 document.getElementById('petType').addEventListener('change', updateCosts);
 document.getElementById('addCost').addEventListener('click', addNewCost);
+document.getElementById('downloadPDF').addEventListener('click', generatePDF);
 
 // Initialize costs on page load
 document.addEventListener('DOMContentLoaded', updateCosts);

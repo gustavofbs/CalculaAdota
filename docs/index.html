@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Adoção Pet</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -46,6 +48,7 @@
                 <div class="total-cost">
                     <h3>Custo Total: <span id="totalCost">R$ 0,00</span></h3>
                     <p class="salary-reference">Referência: Salário Mínimo 2025 - R$ 1.518,00</p>
+                    <button id="downloadPDF" class="btn btn-download"><span>📥</span> Baixar Relatório PDF</button>
                 </div>
             </div>
         </div>
